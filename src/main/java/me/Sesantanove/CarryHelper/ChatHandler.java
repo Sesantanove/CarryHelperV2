@@ -14,7 +14,9 @@ public class ChatHandler {
     private static long cooldown=0;
     @SubscribeEvent
     public void ChatHandler(ClientChatReceivedEvent e) {
+        //Checks if the message recived contains ☠ Defeated so it can auto lap
         if (e.message.getUnformattedText().contains("☠ Defeated")) {
+            //Cooldown since the message runs twice idk why, also prevent other mods to run this code multiple time
             if (System.currentTimeMillis()-cooldown<3000){
                 return;
             }
@@ -22,6 +24,7 @@ public class ChatHandler {
             cooldown=System.currentTimeMillis();
             if (gui.isAutoLapEnabled()) {
                 gui.carrylap();
+                //Logs for debugging
                 System.out.println("Boss sconfitto, lap del party");
                 Thread t1 = new Thread() {
                     @Override
@@ -38,6 +41,7 @@ public class ChatHandler {
             }
 
         }
+        //Check if a trade was succesfull to add
         if (e.message.getUnformattedText().contains("Trade completed with")) {
             String nickname = e.message.getUnformattedText().replaceAll("Trade completed with", "").replaceAll("\\[VIP]", "").replaceAll("\\[VIP\\+]", "").replaceAll("\\[MVP]", "").replaceAll("\\[MVP\\+]", "").replaceAll("\\[MVP\\+\\+]", "").replaceAll("!", "").replaceAll(" ", "");
             String nicknamekeeprank = e.message.getFormattedText().replaceAll("§r§6Trade completed with", "").replaceAll("!", "");
