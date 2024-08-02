@@ -1,0 +1,8 @@
+{
+  "package": "me.Sesantanove.CarryHelper.mixin",
+  "plugin": "me.Sesantanove.CarryHelper.init.AutoDiscoveryMixinPlugin",
+  "refmap": "mixins.CarryHelper.refmap.json",
+  "minVersion": "0.7",
+  "compatibilityLevel": "JAVA_8",
+  "__comment": "You do not need to manually register mixins in this template. Check the auto discovery mixin plugin for more info."
+}
