@@ -1,39 +1,34 @@
-# Architectury Loom based template for 1.8.9 forge mods
+After a lot of time, a quit, a lot of crashes and an handle i finally decided to continue the project Carryhelper.
 
-**For other templates, do check out the [other branches of this repository](https://github.com/romangraef/Forge1.8.9Template/branches/all)**
+If you don't know what carryhelper was i would suggest looking at my other Thread, if you are lazy it was just a standalone jar that counted how many times a player needed a carry.
 
-## Usage
+since i got some suggestions i decided to listed to the sb comunity and to create a Forge 1.8.9 mod implementing all the features.
 
-Check out https://moddev.nea.moe/ for a full tutorial on legacy modding.
+CarryHelper
+​
+Let me guess you make money carrying people in dungeons or eman.
 
-Alternatively, read here for a basic overview on how to use this repository.
+If you are tired of using your brain to count how many times you have to carry a party this mod is the solution
 
-To get started, [Use this template](https://github.com/new?template_name=Forge1.8.9Template&template_owner=nea89o).
+You may ask how does it work
+It's really simple, you type /carryhelper and this interface will pop up
 
-> [!WARNING]
-> Do not Fork or Clone or Download ZIP this template. If you "use" this template a custom mod id will be generated. You can do that manually using the `make-my-own` script, if you are on linux. If not, just click the use this template button. If you want to use kotlin or make a 1.12 mod check the "Include all branches" and change the default branch in https://github.com/yourname/yourreponame/branches
+Here you can add/remove players to carry.
 
-This project uses [DevAuth](https://github.com/DJtheRedstoner/DevAuth) per default, so you can log in using your real
-minecraft account. If you don't need that, you can remove it from the buildscript.
+What does Buttons do?
+- Add: Add the player to the carry list
+- Remove: Remove the player to the carry list
+- Clear: Remove all the players from the carry list
+- Lap: 
+           - If Player Nickname textbox is not set:
+                     Removes 1x carry from all the players
+            - If Player Nickname textbox is set to a player carry
+                     Remove 1x carry from the player
+- Auto LAP: Toggles Auto Lap on/off
 
-To run the mod you will need two JDKs, one Java 17 jdk and one Java 1.8 jdk. You can download those
-from [here](https://adoptium.net/temurin/releases) (or use your own downloads).
+In the 2.0 update i added Auto LAP feature, looking for defeat boss message to auto lap the party (Currently not working for slayers)
 
-When you import your project into IntelliJ, you need to set the gradle jvm to the Java 17 JDK in the gradle tab, and the
-Project SDK to the Java 1.8 JDK. Then click on the sync button in IntelliJ, and it should create a run task
-called `Minecraft Client`. If it doesn't then try relaunching your IntelliJ. **Warning for Mac users**: You might have to remove the `-XStartOnFirstThread` vm argument from your run configuration. In the future, that should be handled by the plugin, but for now you'll probably have to do that manually.
+You will probably ask should i trust this stranger and use this mod?
+I think you shouldn't trust anyone not even me, i would suggest testing the mod on isthisarat or if you are an advanced user looking at the mod code and compile it yourself.
 
-To export your project, run the `gradle build` task, and give other people the
-file `build/libs/<modid>-<version>.jar`. Ignore the jars in the `build/badjars` folder. Those are intermediary jars that
-are used by the build system but *do not work* in a normal forge installation.
-
-If you don't want mixins (which allow for modifying vanilla code), then you can remove the references to mixins from
-the `build.gradle.kts` at the lines specified with comments and the `com.example.mixin` package.
-
-### For those who have not an attention span
-
-[![Youtube Tutorial](https://i.ytimg.com/vi/nWzHlomdCgc/maxresdefault.jpg)](https://www.youtube.com/watch?v=nWzHlomdCgc)
-
-## Licensing
-
-This template is licensed under the Unlicense (license copy present in this repository), or alternatively under [Creative Commons 1.0 Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/), and all contributions and PR to this template are expected to follow this. This means your mod, based on this template can be licensed whatever way you want, and does not need to reference back to this template in any way.
+I would also let you know that this is my first mod so i would like getting more suggestion/help than hate, Hope this mod help you not get scammed
